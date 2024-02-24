@@ -1,0 +1,21 @@
+.gradient {
+  background: radial-gradient(
+    135.87% 72.71% at 50% 27.29%,
+    rgba(25, 34, 38, 0) 15.73%,
+    #192226 44.83%,
+    #121a1d 100%
+  );
+
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 52px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #192226;
+}

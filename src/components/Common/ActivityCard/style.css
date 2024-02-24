@@ -1,0 +1,62 @@
+.activity-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 216px;
+  padding: 16px;
+  align-items: flex-start;
+  gap: 16px;
+  border-radius: 16px;
+  border: 1px solid #23282f;
+  background: rgba(22, 25, 29, 0.8);
+  backdrop-filter: blur(5px);
+}
+.activity-number {
+  display: flex;
+  width: 24px;
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: center;
+  border-radius: 26px;
+  background: #feb000;
+  color: #16191d;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.main-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.timing {
+  color: #f9a700;
+  font-family: "Geist";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 13.2px */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.text {
+  color: var(--text-action, #fff);
+  font-family: "Geist";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%; /* 22.4px */
+  letter-spacing: 0.1px;
+}
+.detail-text {
+  color: #adadad;
+  font-family: "Geist";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 22.4px */
+  letter-spacing: 0.1px;
+  display: flex;
+  gap: 8px;
+  width: 216px;
+}

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: "Geist";
+  src: local("GeistVariableVF"),
+    url("./fonts/GeistVariableVF.ttf") format("truetype");
+}
+.App {
+  font-family: "Geist";
+}

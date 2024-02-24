@@ -1,0 +1,25 @@
+.button {
+  background-color: #fff;
+  border: none;
+  color: black;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  margin: 0 16px;
+  margin-bottom: 16px;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 160%; /* 22.4px */
+  letter-spacing: 0.4px;
+}
+
+.disabled {
+  background-color: #f2f2f2;
+  color: #b3b3b3;
+  cursor: not-allowed;
+}

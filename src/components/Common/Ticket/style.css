@@ -1,0 +1,197 @@
+.ticket {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform-origin: center;
+  /* filter: drop-shadow(0px 3px 6px rgba(25, 33, 39, 0.11))
+    drop-shadow(0px 12px 12px rgba(25, 33, 39, 0.09))
+    drop-shadow(0px 27px 16px rgba(25, 33, 39, 0.06))
+    drop-shadow(0px 47px 19px rgba(25, 33, 39, 0.02))
+    drop-shadow(0px 74px 21px rgba(25, 33, 39, 0)); */
+  filter: drop-shadow(0px 3px 6px rgba(25, 33, 39, 0.8));
+}
+.cutout {
+  background: url("../../../assets/AI-Trip-Planner.png");
+  background-size: cover;
+  animation: expandWindow 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation-delay: 0.8s;
+}
+.animation-layer {
+  animation: animation-layer-fade 1s cubic-bezier(0.215, 0.61, 0.355, 1)
+    forwards;
+  animation-delay: 1.3s;
+}
+
+.card-number-wrapper {
+  position: absolute;
+  border-radius: 50%;
+  background: #2989ff;
+  width: 24px;
+  aspect-ratio: 1;
+  top: -12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+.ticket-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ticket-head-text {
+  color: #fff;
+  text-align: center;
+  font-family: "Geist";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: -1.4px;
+  position: absolute;
+}
+.ticket-body-bg {
+  position: absolute;
+  top: 0;
+}
+/* .ticket-body-bg-large {
+  position: absolute;
+} */
+.ticket-body-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0;
+}
+.ticket-body-content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  width: 319px;
+  height: fit-content;
+  gap: 12px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-top: 32px;
+  gap: 24px;
+  width: 287px;
+  height: 108.14px;
+  flex-shrink: 0;
+}
+.option-container-large {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 370px;
+  margin-top: 48px;
+  overflow: scroll;
+}
+.option-container-large::-webkit-scrollbar {
+  display: none;
+}
+.option-container-medium {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 200px;
+  margin-top: 48px;
+  overflow: scroll;
+}
+.input-placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  font-family: "Geist";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 19.2px */
+  letter-spacing: -0.8px;
+  margin-top: 16px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-wrapper {
+  display: flex;
+  width: 100%;
+  align-self: flex-end;
+}
+
+.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 10; /* Ensures the active ticket is above others */
+}
+
+.direction-left,
+.direction-right {
+  opacity: 1; /* Start with non-active tickets being invisible */
+}
+
+.direction-left {
+  animation: slideLeft 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+.direction-right {
+  animation: slideRight 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes expandWindow {
+  0% {
+    /* opacity: 1; */
+  }
+  100% {
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    /* opacity: 0; */
+  }
+}
+@keyframes animation-layer-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

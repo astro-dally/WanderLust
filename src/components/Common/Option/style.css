@@ -1,0 +1,30 @@
+.custom-option {
+  display: flex;
+  width: 252px;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.custom-option.selected {
+  background: #fff;
+  color: #192226;
+}
+.custom-option-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-option-label {
+  font-family: "Geist";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%; /* 25.6px */
+  letter-spacing: 0.1px;
+}
