@@ -26,6 +26,44 @@ const ItineraryScreen = () => {
 
   useEffect(() => {
     // write a fetch call to get the data from the openAI API, also dont forget to pass prompt as body :)
+    setLoading(true);
+    fetch("https://trip-planner-ai-api.onrender.com/wanderlust", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success) {
+          try {
+            const responseData = JSON.parse(data.response);
+            if (responseData.success === false) {
+              setError(responseData.error.message);
+            } else if (!responseData?.itinerary) {
+              throw new Error(Object.values(responseData)[0]);
+            } else {
+              setData(responseData);
+            }
+          } catch (error) {
+            setError(error.message);
+          }
+        }
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   const itineraries = data?.itinerary || [];
